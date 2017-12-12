@@ -1,0 +1,24 @@
+{
+  "data":[
+        {
+            "baseimage": "../src/assets/img/icon1.png",
+            "hoverimage": "../src/assets/img/icon1-1.png",
+            "name":"Pika Admin"
+        },
+        {
+            "baseimage": "../src/assets/img/icon2.png",
+            "hoverimage": "../src/assets/img/icon2-1.png",
+            "name":"Tenant Admin"
+        },
+        {
+            "baseimage": "../src/assets/img/icon3.png",
+            "hoverimage": "../src/assets/img/icon3-1.png",
+            "name":"Author"
+        },
+        {
+            "baseimage": "../src/assets/img/icon4.png",
+            "hoverimage": "../src/assets/img/icon4-1.png",
+            "name":"Test Admin"
+        }
+    ]
+}

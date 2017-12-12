@@ -1,0 +1,421 @@
+// IE10&11 Flexbox fix
+@media all and (-ms-high-contrast:none) {
+  html {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// app-dashboard and app-root are Angular2 selectors. You can add here your own selectors if you need.
+.app,
+app-dashboard,
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  flex: 0 0 $navbar-height;
+}
+
+.app-footer {
+  flex: 0 0 $footer-height;
+}
+
+.app-body {
+  display: flex;
+  flex-grow:1;
+  flex-direction: row;
+  overflow-x: hidden;
+
+  .main {
+    flex: 1;
+  }
+
+  .sidebar {
+    // $sidebar-width is the width of the columns
+    flex: 0 0 $sidebar-width;
+    // put the nav on the left
+    order: -1;
+  }
+
+  .aside-menu {
+    // $aside-menu-width is the width of the columns
+    flex: 0 0 $aside-menu-width;
+  }
+}
+
+//
+// header
+//
+.header-fixed {
+  .app-header {
+    position: fixed;
+    z-index: $zindex-navbar;
+    width: 100%;
+  }
+  .app-body {
+    margin-top: $navbar-height;
+  }
+}
+
+//
+// Sidebar
+//
+.sidebar-hidden {
+
+  .sidebar {
+    margin-left: - $sidebar-width + 200px;
+    width: $sidebar-width - 150px;
+  }
+  .nav-item-menu{
+    display: none;
+  }
+  .badge{
+    display: none;
+  }
+  // .nav{
+  //   width:50px;
+  // }
+  .sidebar .sidebar-nav {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    width: $sidebar-width - 150px;
+}
+  .sidebar .nav .nav-item.nav-dropdown.open {
+    background: none;
+  }
+  &.sidebar .sidebar-nav .sidebar{
+    width: $sidebar-width - 150px;
+  }
+  // .sidebar .nav{
+  //   width:50px;
+  // }
+  
+}
+
+.sidebar-fixed {
+
+  .sidebar {
+    position: fixed;
+    height: 100%;
+
+    .sidebar-nav {
+      height: calc(100vh - #{$navbar-height});
+    }
+  }
+
+  .main, .app-footer {
+    margin-left: $sidebar-width;
+  }
+
+  &.sidebar-hidden {
+
+    .main, .app-footer {
+      margin-left: 50px;
+    }
+  }
+}
+
+.sidebar-off-canvas {
+  .sidebar {
+    position: fixed;
+    z-index: $zindex-navbar - 1;
+    height: 100%;
+
+
+    .sidebar-nav {
+      height: calc(100vh - #{$navbar-height});
+    }
+  }
+}
+
+.sidebar-compact {
+  .sidebar {
+    flex: 0 0 $sidebar-compact-width;
+  }
+
+  &.sidebar-hidden {
+
+    .sidebar {
+      margin-left: - $sidebar-compact-width;
+    }
+  }
+
+  &.sidebar-fixed {
+
+    .main, .app-footer {
+      margin-left: $sidebar-compact-width;
+    }
+
+    &.sidebar-hidden {
+
+      .main, .app-footer {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+//
+// Aside Menu
+//
+.aside-menu-hidden {
+
+  .aside-menu {
+    margin-right: - $aside-menu-width;
+  }
+}
+
+.aside-menu-fixed {
+
+  .aside-menu {
+    position: fixed;
+    right: 0;
+    height: 100%;
+
+    .tab-content {
+      height: calc(100vh - #{$aside-menu-nav-padding-y * 2 + $font-size-base} - #{$navbar-height});
+    }
+  }
+
+  .main, .app-footer {
+    margin-right: $aside-menu-width;
+  }
+
+  &.aside-menu-hidden {
+
+    .main, .app-footer {
+      margin-right: 0;
+    }
+  }
+}
+
+// sidebar submenu li hover function
+.sidebar .nav .nav-item ul li{
+  &:hover {
+            border-left:3px solid #00aed9; 
+          }
+  }
+
+
+//hide dropdown icon in top nav
+
+.dropdown-toggle::after{
+  display: none;
+}
+
+// last icon visible
+.admin .dropdown-toggle::after{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 0.3em;
+    vertical-align: middle;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-left: 0.3em solid transparent;
+}
+
+//top-nav-icon padding
+
+.top-nav-icon li{padding:0 10px}
+
+.admin-icon{
+  width:300px;
+  padding: 10px 10px 10px 10px;
+  overflow: auto;
+}
+// admin icon
+.admins-menu {
+  float:left;
+  width:50%;
+  // margin: 5px 0;
+}
+.admins-menu img{
+  float:left;
+  padding:0px 20px;
+}
+.admins-menu p{
+  text-align: center;
+  float: left;
+  width: 100%;
+}
+
+.admins-menu:hover {
+box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.5);
+background: #f8f8f8;
+color:#00aed9;
+cursor: pointer;
+}
+
+
+// profile information css
+
+.admin-profile{
+  width:300px;
+  padding: 10px 10px 10px 10px;
+  background: #e8eff6;
+  overflow:scroll; 
+  height:600px;
+}
+
+.admins-head{padding:5px 0; overflow: auto}
+.admin-accounts{display: inline-block; width:49%; text-align: left}
+.admin-accounts a{cursor:pointer; font-size: 11px}
+.admin-signout{display: inline-block; width:49%; text-align: right}
+.admin-signout a{cursor:pointer; font-size: 11px}
+.admin-profile-image{
+  padding:0 5px; width: 80px;
+  margin: 0 auto;
+  margin-top: -10px;
+}
+.admin-profile-image img{margin: 0 auto; width: 73px;}
+.admin-profile-image-text{padding:10px 0 0 0;}
+.admin-profile-image-text p{text-align: center; margin-bottom: 0px; font-size: 12px}
+.my-organization{padding: 5px 0 10px 0; border-top: 2px solid #ffffff; margin:5px 0;}
+.my-organization span{text-align: center; display: block; padding:5px 0}
+
+.university-details{padding:5px 5px; overflow: auto; margin: 3px 0}
+.university-logo{width:40%; float:left}
+.university-name{width:60%; float: left}
+.universitynames{margin:0px; font-size: 12px;}
+.adminnames {float:left; padding:3px 0;}
+.adminnames span{padding:0 8px 0 0 ; font-size: 10px;}
+.university-details:hover{
+  border:2px solid #fff; 
+  box-shadow: 0px 2px 2px  rgba(255, 248, 248, 0.5); 
+  cursor: pointer; 
+  background: #fff;
+  transition: transform .2s ease-in-out;
+}
+.dropdown-menu-right {
+  top: 40px;
+}
+.aside-menu-off-canvas {
+  .aside-menu {
+    position: fixed;
+    right: 0;
+    z-index: $zindex-navbar - 1;
+    height: 100%;
+
+    .tab-content {
+      height: calc(100vh - #{$aside-menu-nav-padding-y * 2 + $font-size-base} - #{$navbar-height});
+    }
+  }
+}
+
+//
+// Footer
+//
+.footer-fixed {
+
+  .app-footer {
+    position: fixed;
+    bottom: 0;
+    z-index: $zindex-navbar;
+    width: 100%;
+  }
+
+  .app-body {
+    margin-bottom: $footer-height;
+  }
+}
+
+//
+// Animations
+//
+.app-header,
+.app-footer,
+.sidebar,
+.main,
+.aside-menu {
+  transition-duration: $layout-transition-speed, $layout-transition-speed;
+  transition-property: margin-left, margin-right;
+}
+
+//
+// Mobile layout
+//
+
+@include media-breakpoint-down(md) {
+
+  .app-header {
+    position: fixed !important;
+    z-index: $zindex-navbar;
+    width: 100%;
+
+    .navbar-toggler {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 70px;
+      height: inherit;
+    }
+
+    .navbar-toggler {
+      @if (lightness( $navbar-brand-bg ) > 40) {
+        color: $navbar-color;
+      } @else {
+        color: #fff;
+      }
+    }
+
+    .navbar-brand {
+      width: 100% !important;
+      margin: 0 auto !important;
+    }
+
+    .navbar-nav {
+      position: absolute;
+      top: 0;
+      right: 15px;
+      height: inherit;
+    }
+  }
+
+  .app-body {
+    margin-top: $navbar-height;
+  }
+
+  .sidebar {
+    position: fixed;
+    width: $mobile-sidebar-width;
+    height: 100%;
+    margin-left: - $mobile-sidebar-width;
+
+    .sidebar-nav,
+    .nav {
+      width: $mobile-sidebar-width !important;
+    }
+  }
+
+  .main, .app-footer {
+    margin-left: 0 !important;
+  }
+
+  .aside-menu {
+    margin-right: - $aside-menu-width;
+  }
+
+  .sidebar-mobile-show {
+
+    .sidebar {
+      width: $mobile-sidebar-width;
+      margin-left: 0;
+
+      .sidebar-nav {
+        height: calc(100vh - #{$navbar-height});
+      }
+    }
+
+    .main {
+      margin-right: - $mobile-sidebar-width !important;
+      margin-left: $mobile-sidebar-width !important;
+    }
+  }
+}
