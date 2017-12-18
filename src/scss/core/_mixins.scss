@@ -114,3 +114,21 @@
   border-top-width: 2px;
   border-top-color: $color;
 }
+
+@mixin background($theme-sidebar-bg, $theme1-sidebar-bg, $theme2-sidebar-bg, $theme3-sidebar-bg, $theme4-sidebar-bg,$theme5-sidebar-bg) {
+  $navbar-brand-bg: $theme-sidebar-bg;
+}
+
+@mixin sidebar-nav-link-hover-bg($sidebar_background_change, $sidebar_background_change1) {
+  $sidebar-nav-link-hover-bg: $sidebar_background_change;
+}
+
+
+
+
+
+
+
+
+
+

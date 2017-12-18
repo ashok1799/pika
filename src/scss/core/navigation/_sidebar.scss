@@ -107,9 +107,14 @@
         }
 
         &:hover {
-          color: $sidebar-nav-link-hover-color !important;
-          background: $sidebar-nav-link-hover-bg !important;
+          color: $sidebar-nav-link-hover-color;
+          background: $sidebar-nav-link-hover-bg;
           border-left:3px solid #00aed9; 
+
+          // color: $sidebar-nav-link-hover-color !important;
+          // background: $sidebar-nav-link-hover-bg !important;
+          // border-left:3px solid #00aed9; 
+
           @include borders($sidebar-nav-link-hover-borders);
 
           i {
@@ -379,3 +384,5 @@
     }
   }
 }
+
+

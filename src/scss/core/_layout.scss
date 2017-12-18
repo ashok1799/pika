@@ -198,6 +198,7 @@ app-root {
 .sidebar .nav .nav-item ul li{
   &:hover {
             border-left:3px solid #00aed9; 
+            // border-left:3px solid red; 
           }
   }
 
@@ -419,3 +420,176 @@ cursor: pointer;
     }
   }
 }
+
+.normal1{
+  background: pink;
+  @include borders($sidebar-nav-link-borders);
+  @if $enable-sidebar-nav-rounded {
+    border-radius: $border-radius;
+  }
+
+  &:hover {
+    color: #fff !important;
+    background: #272d33 !important;
+    border-left:3px solid #00aed9 !important; 
+
+    @include borders($sidebar-nav-link-hover-borders);
+
+    i {
+      color: #00aed9 !important;
+    }
+    &.hover{
+      color: #fff !important;
+    }
+  }
+}
+
+.normal2{
+  background: #3f3e3d;
+  @include borders($sidebar-nav-link-borders);
+  @if $enable-sidebar-nav-rounded {
+    border-radius: $border-radius;
+  }
+  i {
+    color: #fff !important;
+  }
+  &.active i{
+    color: orange !important;
+  }
+
+  &:hover {
+    color: #fff !important;
+    background: #2a2827 !important;
+    border-left:3px solid orange !important; 
+
+    i {
+      color: orange !important;
+    }
+    &.hover{
+      color: #fff !important;
+    }
+  }
+}
+
+.normal3{
+  background: green;
+  @include borders($sidebar-nav-link-borders);
+  @if $enable-sidebar-nav-rounded {
+    border-radius: $border-radius;
+  }
+
+  &:hover {
+    color: #fff !important;
+    background: #57ED57 !important;
+    border-left:3px solid green !important; 
+
+    i {
+      color: #fff !important;
+    }
+    &.hover{
+      color: #fff !important;
+    }
+  }
+}
+
+.normal4{
+  background: red;
+  @include borders($sidebar-nav-link-borders);
+  @if $enable-sidebar-nav-rounded {
+    border-radius: $border-radius;
+  }
+
+  &:hover {
+    color: #fff !important;
+    background: red !important;
+    border-left:3px solid red !important; 
+
+    i {
+      color: #fff !important;
+    }
+    &.hover{
+      color: #fff !important;
+    }
+  }
+}
+
+.normal5{
+  background: blue;
+  @include borders($sidebar-nav-link-borders);
+  @if $enable-sidebar-nav-rounded {
+    border-radius: $border-radius;
+  }
+
+  &:hover {
+    color: #fff !important;
+    background: blue !important;
+    border-left:3px solid green !important; 
+
+    i {
+      color: #fff !important;
+    }
+    &.hover{
+      color: #fff !important;
+    }
+  }
+}
+
+.circle { 
+  width: 30px;
+  height: 30px;
+  background: #00aed9; 
+  -moz-border-radius: 15px; 
+  -webkit-border-radius: 15px; 
+  border-radius: 15px;
+  float: left;
+  margin: 0 5px;
+  overflow: auto
+}
+.circle1 { 
+  width: 30px;
+  height: 30px;
+  background: #ffba00; 
+  -moz-border-radius: 15px; 
+  -webkit-border-radius: 15px; 
+  border-radius: 15px;
+  float: left;
+  margin: 0 5px;
+  overflow: auto
+}
+.circle2 { 
+  width: 30px;
+  height: 30px;
+  background: #22b089; 
+  -moz-border-radius: 15px; 
+  -webkit-border-radius: 15px; 
+  border-radius: 15px;
+  float: left;
+  margin: 0 5px;
+  overflow: auto
+}
+.circle3 { 
+  width: 30px;
+  height: 30px;
+  background: #d63b49; 
+  -moz-border-radius: 15px; 
+  -webkit-border-radius: 15px; 
+  border-radius: 15px;
+  float: left;
+  margin: 0 5px;
+  overflow: auto
+}
+.circle4{ 
+  width: 30px;
+  height: 30px;
+  background: #04a9d8; 
+  -moz-border-radius: 15px; 
+  -webkit-border-radius: 15px; 
+  border-radius: 15px;
+  float: left;
+  margin: 0 5px;
+  overflow: auto
+}
+
+.theme{width:300px; overflow: auto; padding:10px 20px;}
+
+.theme1{width:300px; overflow: auto; padding:10px 20px;}

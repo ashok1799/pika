@@ -35,9 +35,16 @@ $vine: #00bf8f;
 $foursquare: #1073af;
 $vimeo: #aad450;
 
+//custom declare variable for ashok
+
+
+$sidebar_background_change: yellow;
+$sidebar_background_change1: red;
+
 // Navbar
 
 $navbar-height:                     60px;
+// $navbar-bg:                         $theme;
 $navbar-bg:                         #e8eff6;
 $navbar-border: (
   bottom: (
@@ -175,3 +182,4 @@ $footer-borders: (
 
 $card-icon-bg:                      transparent;
 $card-icon-color:                   $body-color;
+
